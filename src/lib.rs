@@ -14,6 +14,7 @@ pub struct Feed {
 #[serde(rename_all = "camelCase")]
 pub struct PostEntry {
     pub post: Post,
+    pub reply: Option<Reply>,
 }
 
 #[derive(Clone, PartialEq)]
@@ -29,7 +30,6 @@ pub struct Post {
     pub like_count: u32,
     #[serde(with = "time::serde::rfc3339")]
     pub indexed_at: OffsetDateTime,
-    pub reply: Option<Reply>,
 }
 
 #[derive(Clone, PartialEq)]
