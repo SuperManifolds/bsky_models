@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Feed {
@@ -9,14 +9,14 @@ pub struct Feed {
     pub cursor: String
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PostEntry {
     pub post: Post,
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Post {
@@ -32,7 +32,7 @@ pub struct Post {
     pub reply: Option<Reply>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ReplyPost {
@@ -46,7 +46,7 @@ pub struct ReplyPost {
     #[serde(with = "time::serde::rfc3339")]
     pub indexed_at: OffsetDateTime,
 }
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Author {
@@ -58,7 +58,7 @@ pub struct Author {
 }
 
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Record {
@@ -70,7 +70,7 @@ pub struct Record {
 }
 
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Embed {
@@ -80,7 +80,7 @@ pub struct Embed {
 }
 
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ImageEmbed {
@@ -91,7 +91,7 @@ pub struct ImageEmbed {
 }
 
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Reply {
