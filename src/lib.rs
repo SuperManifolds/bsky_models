@@ -100,7 +100,7 @@ pub struct Reply {
 }
 
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Viewer {
